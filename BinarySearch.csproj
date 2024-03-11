@@ -1,0 +1,85 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Ödev
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] meyveler = new string[5];
+            meyveler[0] = "Elma";
+            meyveler[1] = "Armut";
+            meyveler[2] = "Muz";
+            meyveler[3] = "Portakal";
+            meyveler[4] = "Şeftali";
+
+            Array.Sort(meyveler);
+            foreach (string i in meyveler)
+            {
+                Console.WriteLine(i);
+            }
+
+            Console.Write("Aradğınız Kelimeyi Giriniz: ");
+            string anahtar = Console.ReadLine();
+            anahtar.Trim();
+
+            for(int i = 0; i < meyveler.Length; i++)
+            {
+                if (meyveler[i] == anahtar)
+                {
+                    Console.WriteLine("Aradığınız Kelime Dizinin " + i + ". Elemanındadır.");
+                    goto bitir;
+                }
+            }
+            for (int i = 0; i < meyveler.Length; i++)
+            {
+                if (meyveler[i] != anahtar)
+                {
+                    Console.WriteLine("Aradığınız Kelime Bulunamadı...");
+                    goto bitir;
+                }
+            }
+            bitir:
+
+            Console.ReadLine();
+
+            /*
+             string[] meyveler = new string[5];
+meyveler[0] = "Elma";
+meyveler[1] = "Armut";
+meyveler[2] = "Muz";
+meyveler[3] = "Portakal";
+meyveler[4] = "Şeftali";
+
+Array.Sort(meyveler);
+
+foreach (string i in meyveler)
+{
+    Console.WriteLine(i);
+}
+
+Console.Write("Anahtar Kelimeyi Giriniz: ");
+string anahtar = Console.ReadLine();
+anahtar.Trim();
+
+int x = Array.BinarySearch(meyveler, anahtar);
+
+if (x <= -1)
+{
+    Console.WriteLine("Aradığınız Kelime Bulunamadı...");
+}
+else
+{
+    Console.WriteLine("Aradığınız Kelime Dizinin " + x + ". Elemanındır.");
+}
+Console.ReadLine();
+            */
+
+
+        }
+    }
+}
